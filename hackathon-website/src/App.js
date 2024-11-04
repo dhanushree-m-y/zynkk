@@ -8,6 +8,7 @@ import Hackathons from './pages/Hackathons';
 import Organize from './pages/Organize';
 import Contact from './pages/Contact';
 
+
 function App() {
   return (
     <Router>

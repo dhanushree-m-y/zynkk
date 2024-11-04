@@ -1,0 +1,53 @@
+/* Home.css */
+
+/* Existing styles... */
+
+.login-container {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    margin-top: 2rem;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .login-container h2 {
+    text-align: center;
+    color: #0f3460; /* Dark navy blue */
+    margin-bottom: 1rem;
+  }
+  
+  .login-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 1rem 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .login-container button {
+    background-color: #0f3460; /* Dark navy blue */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+  
+  .login-container button:hover {
+    background-color: #e49bff; /* Light purple on hover */
+  }
+  
+  .register-forget {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  

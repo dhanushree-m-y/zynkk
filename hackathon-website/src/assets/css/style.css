@@ -1,21 +1,31 @@
-.navbar {
+/* General Body Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Light background */
+    color: #333; /* Dark text color */
+  }
+  
+  /* Navbar Styles */
+  .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #0f3460;
+    background-color: #0f3460; /* Dark navy blue */
     color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
   
   .navbar .logo {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: bold;
   }
   
   .navbar ul {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
     margin: 0;
     padding: 0;
   }
@@ -30,33 +40,66 @@
     text-transform: uppercase;
     color: #ffffff;
     text-decoration: none;
+    transition: color 0.3s ease; /* Transition for hover effect */
   }
   
   .navbar ul li a:hover {
-    color: #e49bff;
+    color: #e49bff; /* Light purple on hover */
   }
   
-  .footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #0f3460;
-    color: #ffffff;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-  }
-  
+  /* Page Styles */
   .home, .events, .hackathons, .organize, .contact {
-    padding: 4rem;
+    padding: 4rem 2rem;
     text-align: center;
+    background-color: #ffffff; /* White background for each page */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 2rem; /* Margin around each page */
   }
   
   h1 {
     font-size: 2.5rem;
-    color: #0f3460;
+    color: #0f3460; /* Dark navy blue */
   }
   
   p {
     font-size: 1.2rem;
+    line-height: 1.6; /* Improved readability */
+  }
+  
+  /* Footer Styles */
+  .footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #0f3460; /* Dark navy blue */
+    color: #ffffff;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    margin-top: auto; /* Push footer to the bottom */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+    }
+  
+    .navbar ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .navbar ul li {
+      margin: 0.5rem 0; /* Space between navbar items */
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
   }
   
