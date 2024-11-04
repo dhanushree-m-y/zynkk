@@ -5,17 +5,7 @@ const Events = () => {
     return (
         <div className="main-container">
             <header>
-                <nav className="navbar">
-                    <div className="logo">Astrix</div>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="events.html">Events</a></li>
-                        <li><a href="hackathon.html">Hackathons</a></li>
-                        <li><a href="organize.html">Organize</a></li>
-                        <li><a href="profile.html">Profile</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </nav>
+               
             </header>
             <div className="filters">
                 <h4>Filters</h4>

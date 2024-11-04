@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #0f3460; /* Primary color */
+    --primary-color: #0f3460; /* Replace with your preferred primary color */
     --background: #1a1a2e; /* Dark background */
     --color: #ffffff; /* Text color */
     --highlight-color: #e49bff; /* Highlight color */
@@ -7,8 +7,6 @@
 
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 html {
@@ -17,30 +15,30 @@ html {
 
 body {
     margin: 0;
-    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif; /* Update font */
     background-color: var(--background);
     color: var(--color);
     letter-spacing: 1px;
+    transition: background 0.2s ease;
 }
 
 a {
     text-decoration: none;
-    color: var(--highlight-color);
+    color: var(--color);
 }
 
 h1 {
     font-size: 2.5rem;
-    margin-bottom: 20px;
 }
 
-/* Navigation Bar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: var(--primary-color);
-    color: var(--color);
+    background-color: var(--primary-color); /* Dark background for the nav */
+    color: var(--color); /* Text color */
     position: fixed;
     width: 100%;
     top: 0;
@@ -58,61 +56,89 @@ h1 {
     list-style: none;
     display: flex;
     gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline;
 }
 
 .navbar ul li a {
     font-size: 1rem;
     font-weight: 500;
     text-transform: uppercase;
+    color: var(--color);
     transition: color 0.3s ease;
 }
 
 .navbar ul li a:hover {
-    color: var(--highlight-color);
+    color: var(--highlight-color); /* Highlight color on hover */
 }
 
-/* Filters Section */
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        gap: 1rem;
+        background-color: var(--primary-color);
+        padding: 1rem;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        display: none;
+    }
+
+    .navbar.active ul {
+        display: flex;
+    }
+
+    .navbar ul li {
+        text-align: center;
+    }
+
+    .navbar .logo {
+        font-size: 1.5rem;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: var(--color);
+    }
+}
+
 .filters {
-    margin: 5rem 2rem 2rem; /* Margin adjusted for space from navbar */
+    margin: 2rem;
 }
 
-.filters h4 {
-    margin-bottom: 0.5rem;
-}
-
-.filters select, .filters button {
-    padding: 0.5rem 1rem;
-    margin-right: 1rem;
-    background-color: var(--primary-color);
-    color: var(--color);
-    border: none;
-    border-radius: 5px;
-}
-
-/* Events Section */
 .main-container {
-    margin-top: 6rem; /* Adjusted for navbar spacing */
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
 }
 
 .events-section {
-    margin: 0 2rem;
+    margin-bottom: 2rem;
 }
 
 .event-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
-/* Card Styling */
 .card {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
     background-color: #9191911f; /* Slightly transparent background */
     border-radius: 10px;
     box-shadow: 0 0 36px 1px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
     position: relative;
     transition: transform 0.5s ease;
-    height: 300px; /* Consistent card height */
 }
 
 .card:hover {
@@ -120,11 +146,15 @@ h1 {
 }
 
 .card .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--primary-color);
-    height: 150px; /* Fixed height for icon section */
 }
 
 .card .icon .fa {
@@ -135,7 +165,9 @@ h1 {
 .card .content {
     padding: 1rem;
     background-color: white;
-    color: #333;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 .card .content h3 {
@@ -154,23 +186,4 @@ h1 {
     text-decoration: none;
     color: var(--primary-color);
     font-weight: bold;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .event-cards {
-        grid-template-columns: 1fr; /* Single-column layout on smaller screens */
-    }
-
-    .card {
-        height: auto; /* Adjust height for mobile */
-    }
-
-    .card .icon {
-        height: 100px; /* Smaller icon section for mobile */
-    }
-
-    .card .content {
-        padding: 0.5rem;
-    }
 }
